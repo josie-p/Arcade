@@ -9,15 +9,14 @@ let nameButton = document.getElementById('nameButton');
 
 let table = document.getElementsByTagName('table')[0];
 
-let td = document.getElementsByTagName('td');
+// let td = document.getElementsByTagName('td');
+
+let clearButton = document.getElementById('clearButton');
+
+let noTouchy = false;
 
 let gameState = {
     players: ['x', 'o'],
-    board: [
-        [null, null, null],
-        [null, null, null], 
-        [null, null, null]
-    ], 
     currentPlayer : ''
 };
 
@@ -30,6 +29,7 @@ function assignPlayer(){
   }
 
 function displayNames(){
+    noTouchy = true;
     let name1 = document.getElementById('playerName1').value;
     let name2 = document.getElementById('playerName2').value;
 
@@ -70,17 +70,44 @@ function togglePlayer(){
 }
 
 table.addEventListener('click', function(evt){
-
-    if(gameState.currentPlayer === 'x'){
-        console.log(gameState.currentPlayer);
-        evt.target.innerText = 'X';
+    if(noTouchy === false){
+        return;
+    }else if(evt.target.innerText !== ''){
+        return;
+    } else if(evt.target.tagName !== 'TD'){
+        return;
     }else{
-        console.log(gameState.currentPlayer);
-        evt.target.innerText = 'O';
+        if(gameState.currentPlayer === 'x'){
+            console.log(gameState.currentPlayer);
+            evt.target.innerText = 'X';
+        }else{
+            console.log(gameState.currentPlayer);
+            evt.target.innerText = 'O';
+        }
     }
 
     togglePlayer();
     console.log(gameState.currentPlayer);
+    displayTurn.innerText = `${gameState.currentPlayer}, it's your turn!`;
 
     // console.log(td);
 })
+
+function clearBoard(){
+// let td = document.getElementsByTagName('td')[0];
+// console.log('hello from outer body of clear');
+
+    for(i = 0; i < 9; i++){
+        console.log('hello from for loop of clear');
+        if(document.getElementsByTagName('td')[i].innerText !== ''){
+            document.getElementsByTagName('td')[i].innerText = '';
+        }
+    }
+
+    displayName1.innerText = '';
+    displayName2.innerText = '';
+    displayTurn.innerText = '';
+    gameState.currentPlayer = '';
+}
+
+clearButton.addEventListener('click', clearBoard);

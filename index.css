@@ -8,6 +8,11 @@ table, td{
     /* border: 1px solid black; */
 }
 
+td{
+    max-width: 50px;
+    max-height: 50px;
+}
+
 table{
     width: 350px;
     height: 350px;
