@@ -72,9 +72,11 @@ function addTick(evt) {
     if (gameState.currentPlayer === "x") {
       console.log(gameState.currentPlayer);
       evt.target.innerText = "X";
+      checkCol1();
     } else {
       console.log(gameState.currentPlayer);
       evt.target.innerText = "O";
+      checkCol1();
     }
   }
 
@@ -88,7 +90,7 @@ table.addEventListener("click", addTick);
 
 //fully clear the board- all the cells, any player messages, currentPlayer property
 function clearBoard() {
-  for (i = 0; i < 9; i++) {
+  for (let i = 0; i < 9; i++) {
     console.log("hello from for loop of clear");
     if (document.getElementsByTagName("td")[i].innerText !== "") {
       document.getElementsByTagName("td")[i].innerText = "";
@@ -106,3 +108,36 @@ function clearBoard() {
 
 //if the clear board button is clicked, call clearBoard function
 clearButton.addEventListener("click", clearBoard);
+
+let counter = 0;
+
+//0, 3, 6
+// function checkCol1(){
+    
+//     for(let i =0; i < 7; i++){
+//         if(i === 0 || i === 3 || i === 6){
+//             console.log('ONE!!!');
+//             if(document.getElementsByTagName("td")[i].innerText === 'O'){
+//                 console.log('PURPLE');
+//                 displayTurn.innerText = 'O won! Ooooh ooooh!';
+//             }else if(document.getElementsByTagName("td")[i].innerText === 'X'){
+//                 console.log('Seven');
+//                 displayTurn.innerText = 'X won! Ooooh ooooh!';
+//             }
+//             // if(document.getElementsByTagName("td")[i].innerText === 'O'){
+//             //     console.log('PURPLE');
+//             //     counter++;
+//             // }else if(document.getElementsByTagName("td")[i].innerText === 'X'){
+//             //     console.log('Seven');
+//             //     counter++
+//             // }
+//         }
+//     }
+//     // if(counter === 3){
+//     //     console.log(counter);
+//     //     displayTurn.innerText = 'O won! Ooooh ooooh!';
+//     // }
+// }
+
+// function checkCol1(){
+// }
