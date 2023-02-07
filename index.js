@@ -72,11 +72,11 @@ function addTick(evt) {
     if (gameState.currentPlayer === "x") {
       console.log(gameState.currentPlayer);
       evt.target.innerText = "X";
-      checkCol1();
+    //   checkCol1();
     } else {
       console.log(gameState.currentPlayer);
       evt.target.innerText = "O";
-      checkCol1();
+    //   checkCol1();
     }
   }
 
@@ -139,5 +139,3 @@ let counter = 0;
 //     // }
 // }
 
-// function checkCol1(){
-// }
