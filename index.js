@@ -74,17 +74,13 @@ function addTick(evt) {
     if (gameState.currentPlayer === "x") {
       console.log(gameState.currentPlayer);
       evt.target.innerText = "X";
-    //   checkCol1();
-    // let firstColMsg = checkCol1();
-    // displayTurn.innerText = firstColMsg;
     checkCol1();
+    checkCol2();
     } else {
       console.log(gameState.currentPlayer);
       evt.target.innerText = "O";
       checkCol1();
-    //   let firstColMsg = checkCol1();
-    // displayTurn.innerText = firstColMsg;
-    //   checkCol1();
+      checkCol2();
     }
   }
 
@@ -113,6 +109,7 @@ function clearBoard() {
   displayTurn.innerText = "";
   victoryMessage.innerText = "";
   gameState.currentPlayer = "";
+  noTouchy = false;
 }
 
 //if the clear board button is clicked, call clearBoard function
@@ -125,10 +122,41 @@ function  checkCol1(){
 
     let td = document.getElementsByTagName('td');
 
-    let displayTurn = document.getElementsByTagName('p')[2];
+    // let displayTurn = document.getElementsByTagName('p')[2];
 
     if(td[0] || td[3] || td[6]){
         for(i = 0; i <= 6; i++){
+            if(td[i].innerText === 'X'){
+                console.log('the letter is x!');
+                counterX++;
+            }else if(td[i].innerText === 'O'){
+                console.log('the letter is o!');
+                counterO++;
+            }
+        }
+    }
+
+    if(counterX === 3){
+        console.log('the value of counterX is ' + counterX);
+        displayTurn.innerText = "";
+        victoryMessage.innerText = 'X won the game!';
+    }else if(counterO === 3){
+        console.log('the value of counterO is ' + counterO);
+        displayTurn.innerText = "";
+        victoryMessage.innerText = 'O won the game!';
+    }
+}
+
+function checkCol2(){
+    let counterX = 0;
+    let counterO = 0;
+
+    let td = document.getElementsByTagName('td');
+
+    // let displayTurn = document.getElementsByTagName('p')[2];
+
+    if(td[1] || td[4] || td[7]){
+        for(i = 0; i <= 7; i++){
             if(td[i].innerText === 'X'){
                 console.log('the letter is x!');
                 counterX++;
