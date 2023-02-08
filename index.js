@@ -74,13 +74,17 @@ function addTick(evt) {
     if (gameState.currentPlayer === "x") {
       console.log(gameState.currentPlayer);
       evt.target.innerText = "X";
-    checkCol1();
-    checkCol2();
+    // checkCol1();
+    // checkCol2();
+    // checkCol3();
+    // checkRow1();
     } else {
       console.log(gameState.currentPlayer);
-      evt.target.innerText = "O";
-      checkCol1();
-      checkCol2();
+      evt.target.innerText = "O"; 
+      // checkCol1();
+      // checkCol2();
+      // checkCol3();
+      // checkRow1();
     }
   }
 
@@ -116,64 +120,199 @@ function clearBoard() {
 clearButton.addEventListener("click", clearBoard);
 
 
-function  checkCol1(){
-    let counterX = 0;
-    let counterO = 0;
+// function  checkCol1(){
+//     let counterX = 0;
+//     let counterO = 0;
 
-    let td = document.getElementsByTagName('td');
-
-    // let displayTurn = document.getElementsByTagName('p')[2];
-
-    if(td[0] || td[3] || td[6]){
-        for(i = 0; i <= 6; i++){
-            if(td[i].innerText === 'X'){
-                console.log('the letter is x!');
-                counterX++;
-            }else if(td[i].innerText === 'O'){
-                console.log('the letter is o!');
-                counterO++;
-            }
-        }
-    }
-
-    if(counterX === 3){
-        console.log('the value of counterX is ' + counterX);
-        displayTurn.innerText = "";
-        victoryMessage.innerText = 'X won the game!';
-    }else if(counterO === 3){
-        console.log('the value of counterO is ' + counterO);
-        displayTurn.innerText = "";
-        victoryMessage.innerText = 'O won the game!';
-    }
-}
-
-function checkCol2(){
-    let counterX = 0;
-    let counterO = 0;
-
-    let td = document.getElementsByTagName('td');
+    // let td = document.getElementsByTagName('td');
 
     // let displayTurn = document.getElementsByTagName('p')[2];
 
-    if(td[1] || td[4] || td[7]){
-        for(i = 0; i <= 7; i++){
-            if(td[i].innerText === 'X'){
-                console.log('the letter is x!');
-                counterX++;
-            }else if(td[i].innerText === 'O'){
-                console.log('the letter is o!');
-                counterO++;
-            }
-        }
-    }
+    // if(td[0] || td[3] || td[6]){
+    //     for(i = 0; i <= 6; i++){
+    //         if(td[i].innerText === 'X'){
+    //             console.log('check col 1 X!');
+    //             counterX++;
+    //         }else if(td[i].innerText === 'O'){
+    //             console.log('check col 1 O');
+    //             counterO++;
+    //         }
+    //     }
+    //     if(victoryMessage.innerText !== ''){
+    //         console.log(' please do not touch ');
+    //         noTouchy = false;
+    //     }else if(counterX === 3){
+    //         console.log('the value of counterX is ' + counterX);
+    //         displayTurn.innerText = "";
+    //         victoryMessage.innerText = 'X won the game!';
+    //     }else if(counterO === 3){
+    //         console.log('the value of counterO is ' + counterO);
+    //         displayTurn.innerText = "";
+    //         victoryMessage.innerText = 'O won the game!';
+    //     }
+    // }
 
-    if(counterX === 3){
-        console.log('the value of counterX is ' + counterX);
-        displayTurn.innerText = "";
-        victoryMessage.innerText = 'X won the game!';
-    }else if(counterO === 3){
-        console.log('the value of counterO is ' + counterO);
-        displayTurn.innerText = "";
-        victoryMessage.innerText = 'O won the game!';
-    }
-}
+    // console.log(col1X, 'check COl 1 X');
+    // console.log(col1O, 'check COl 1 O')
+    // if(victoryMessage.innerText !== ''){
+    //     console.log(' please do not touch ');
+    //     noTouchy = false;
+    // }else if(counterX === 3){
+    //     console.log('the value of counterX is ' + counterX);
+    //     displayTurn.innerText = "";
+    //     victoryMessage.innerText = 'X won the game!';
+    // }else if(counterO === 3){
+    //     console.log('the value of counterO is ' + counterO);
+    //     displayTurn.innerText = "";
+    //     victoryMessage.innerText = 'O won the game!';
+    // }
+// }
+
+// function checkCol2(){
+//     let col2X = 0;
+//     let col2O = 0;
+
+//     let td = document.getElementsByTagName('td');
+
+//     console.log('col2', col2X, col2O);
+//     // let displayTurn = document.getElementsByTagName('p')[2];
+//    console.log(td[7].innerText);
+//     if(td[1] || td[4] || td[7]){
+//         for(i = 0; i <= 7; i++){
+//             if(td[i].innerText === 'X'){
+//                 console.log('the letter is x!');
+//                 col2X++;
+//             }else if(td[i].innerText === 'O'){
+//                 console.log('the letter is o!');
+//                 col2O++;
+//             }
+//         }
+        
+//         if(victoryMessage.innerText !== ''){
+//             console.log(' please do not touch ');
+//             noTouchy = false;
+//         }else if(col2X === 3){
+//             console.log('the value of counterX is ' + col2X);
+//             displayTurn.innerText = "";
+//             victoryMessage.innerText = 'X won the game!';
+//         }else if(col2O === 3){
+//             console.log('the value of counterO is ' + col2O);
+//             displayTurn.innerText = "";
+//             victoryMessage.innerText = 'O won the game!';
+//         }
+//     }
+
+//     console.log(col2X, 'check COl 2 X');
+//     console.log(col2O, 'check COl 2 O')
+    
+    // if(victoryMessage.innerText !== ''){
+    //     console.log(' please do not touch ');
+    //     noTouchy = false;
+    // }else if(counterX === 3){
+    //     console.log('the value of counterX is ' + counterX);
+    //     displayTurn.innerText = "";
+    //     victoryMessage.innerText = 'X won the game!';
+    // }else if(counterO === 3){
+    //     console.log('the value of counterO is ' + counterO);
+    //     displayTurn.innerText = "";
+    //     victoryMessage.innerText = 'O won the game!';
+    // }
+// }
+
+// function checkCol3(){
+//     let counterX = 0;
+//     let counterO = 0;
+
+//     let td = document.getElementsByTagName('td');
+
+//     // let displayTurn = document.getElementsByTagName('p')[2];
+
+//     if(td[2] || td[5] || td[8]){
+//         for(i = 0; i <= 8; i++){
+//             if(td[i].innerText === 'X'){
+//                 console.log('the letter is x!');
+//                 counterX++;
+//             }else if(td[i].innerText === 'O'){
+//                 console.log('the letter is o!');
+//                 counterO++;
+//             }
+//         }
+//         if(victoryMessage.innerText !== ''){
+//             console.log(' please do not touch ');
+//             noTouchy = false;
+//         }else if(counterX === 3){
+//             console.log('the value of counterX is ' + counterX);
+//             displayTurn.innerText = "";
+//             victoryMessage.innerText = 'X won the game!';
+//         }else if(counterO === 3){
+//             console.log('the value of counterO is ' + counterO);
+//             displayTurn.innerText = "";
+//             victoryMessage.innerText = 'O won the game!';
+//         }
+//     }
+
+//     console.log(counterX, 'check col 3 X');
+//     console.log(counterO, 'check Col 3 O')
+    // if(victoryMessage.innerText !== ''){
+    //     console.log(' please do not touch ');
+    //     noTouchy = false;
+    // }else if(counterX === 3){
+    //     console.log('the value of counterX is ' + counterX);
+    //     displayTurn.innerText = "";
+    //     victoryMessage.innerText = 'X won the game!';
+    // }else if(counterO === 3){
+    //     console.log('the value of counterO is ' + counterO);
+    //     displayTurn.innerText = "";
+    //     victoryMessage.innerText = 'O won the game!';
+    // }
+// }
+
+
+// function checkRow1(){
+//   let counterX = 0;
+//   let counterO = 0;
+
+//     let td = document.getElementsByTagName('td');
+
+//     // let displayTurn = document.getElementsByTagName('p')[2];
+
+//     if(td[0] || td[1] || td[2]){
+//         for(i = 0; i <= 2; i++){
+//             if(td[i].innerText === 'X'){
+//                 console.log('the letter is x!');
+//                 counterX++;
+//             }else if(td[i].innerText === 'O'){
+//                 console.log('the letter is o!');
+//                 counterO++;
+//             }
+//         }
+//         if(victoryMessage.innerText !== ''){
+//             console.log(' please do not touch ');
+//             noTouchy = false;
+//         }else if(counterX === 3){
+//             console.log('the value of counterX is ' + counterX);
+//             displayTurn.innerText = "";
+//             victoryMessage.innerText = 'X won the game!';
+//         }else if(counterO === 3){
+//             console.log('the value of counterO is ' + counterO);
+//             displayTurn.innerText = "";
+//             victoryMessage.innerText = 'O won the game!';
+//         }
+
+//     }
+//     console.log(counterX, 'check Row 1 X');
+//     console.log(counterO, 'check Row 1 O')
+
+    // if(victoryMessage.innerText !== ''){
+    //     console.log(' please do not touch ');
+    //     noTouchy = false;
+    // }else if(counterX === 3){
+    //     console.log('the value of counterX is ' + counterX);
+    //     displayTurn.innerText = "";
+    //     victoryMessage.innerText = 'X won the game!';
+    // }else if(counterO === 3){
+    //     console.log('the value of counterO is ' + counterO);
+    //     displayTurn.innerText = "";
+    //     victoryMessage.innerText = 'O won the game!';
+    // } 
+// }
