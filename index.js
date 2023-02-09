@@ -15,6 +15,10 @@ let clearButton = document.getElementById("clearButton");
 
 let noTouchy = false;
 
+// let cat = false;
+
+let count = 0;
+
 let gameState = {
   players: ["X", "O"],
   currentPlayer: "",
@@ -73,12 +77,18 @@ function addTick(evt) {
   } else {
     if (gameState.currentPlayer === "X") {
       evt.target.innerText = "X";
+      count++;
       checkWin();
+      
+      // checkTie();
     } else {
       evt.target.innerText = "O";
+      count++;
       checkWin();
+      // checkTie();
     }
   }
+
 
   togglePlayer();
   displayTurn.innerText = `${gameState.currentPlayer}, it's your turn!`;
@@ -110,8 +120,10 @@ function clearBoard() {
 clearButton.addEventListener("click", clearBoard);
 
 function winMsg(player, position) {
+  // cat = true;
   return player + " " + "won in the " + position + "!!";
 }
+
 
 function checkWin() {
   let td = document.getElementsByTagName("td");
@@ -170,6 +182,10 @@ function checkWin() {
       gameState.currentPlayer,
       "diagonally to the left"
     );
+  } else{
+    if(count >= 9){
+      victoryMessage.innerText = 'The cat got the game!';
+    }
   }
 
   if (victoryMessage.innerText !== "") {
