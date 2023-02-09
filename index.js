@@ -13,6 +13,8 @@ let table = document.getElementsByTagName("table")[0];
 
 let clearButton = document.getElementById("clearButton");
 
+let computerButton = document.getElementById('playComputer');
+
 let noTouchy = false;
 
 // let cat = false;
@@ -61,6 +63,16 @@ function displayNames() {
 //when button to submit names is clicked, call displayNames function
 nameButton.addEventListener("click", displayNames);
 
+//when this button is clicked, play against the computer, not an opponent:
+computerButton.addEventListener("click", autoPlay);
+
+
+function autoPlay(){
+  let name2 = document.getElementById("playerName2");
+  // console.log(name2);
+  name2.value = 'Computer';
+
+}
 
 //toggle between players
 function togglePlayer() {
