@@ -39,21 +39,28 @@ function displayNames() {
   let name1 = document.getElementById("playerName1").value;
   let name2 = document.getElementById("playerName2").value;
 
-  let ind2;
 
-  let ind1 = assignPlayer();
-  if (ind1 === 0) {
-    ind2 = 1;
-  } else {
-    ind2 = 0;
+  if(name1 === '' || name2 === ''){
+    displayName1.innerText = 'You must enter names in both of the slots';
+    return;
+  }else{
+    let ind2;
+
+    let ind1 = assignPlayer();
+    if (ind1 === 0) {
+      ind2 = 1;
+    } else {
+      ind2 = 0;
+    }
+  
+    displayName1.innerText = `${name1}, you are playing with the letter ${gameState.players[ind1]}`;
+    displayName2.innerText = `${name2}, you are playing with the letter ${gameState.players[ind2]}`;
   }
-
-  displayName1.innerText = `${name1}, you are playing with the letter ${gameState.players[ind1]}`;
-  displayName2.innerText = `${name2}, you are playing with the letter ${gameState.players[ind2]}`;
 }
 
 //when button to submit names is clicked, call displayNames function
 nameButton.addEventListener("click", displayNames);
+
 
 //toggle between players
 function togglePlayer() {
