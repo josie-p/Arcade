@@ -1,3 +1,4 @@
+// import 'animate.css';
 //display player names:
 let displayName1 = document.getElementsByTagName("p")[0];
 
@@ -60,6 +61,8 @@ function displayNames() {
   
     displayName1.innerText = `${name1}, you are playing with the letter ${gameState.players[ind1]}`;
     displayName2.innerText = `${name2}, you are playing with the letter ${gameState.players[ind2]}`;
+    displayName1.style.animation = 'rubberBand 2s';
+    displayName2.style.animation = 'rubberBand 2s';
   }
 }
 
@@ -97,6 +100,10 @@ function addTick(evt) {
       return;
     }
     if (gameState.currentPlayer === "X") {
+      if(victoryMessage.innerText !== ''){
+        displayTurn.innerText = '';
+        return;
+      }
       evt.target.innerText = "X";
       count++;
       checkWin();
@@ -104,6 +111,10 @@ function addTick(evt) {
       
       // checkTie();
     } else {
+      if(victoryMessage.innerText !== ''){
+        displayTurn.innerText = '';
+        return;
+      }
       evt.target.innerText = "O";
       count++;
       checkWin();
@@ -111,11 +122,15 @@ function addTick(evt) {
       // checkTie();
     }
 
-    testFunc();
+    setTimeout(testFunc, 500);
+
+    // testFunc(); 
+    //if you want to setTimeout, maybe try fewer milliseconds.
     // setTimeout(playComputer, 1000);
     // playComputer();
     // setTimeout(testFunc, 1000);
     displayTurn.innerText = `${gameState.currentPlayer}, it's your turn!`;
+    console.log('the turn message was changed in the addTick function in the Computer part.', displayTurn.innerText);
     return;
   }
 
@@ -140,6 +155,10 @@ function addTick(evt) {
     }
   }
 
+  if(victoryMessage.innerText !== ''){
+    displayTurn.innerText = '';
+    return;
+  }
   togglePlayer();
   displayTurn.innerText = `${gameState.currentPlayer}, it's your turn!`;
 }
@@ -199,11 +218,19 @@ function testFunc(){
   const randIdx = Math.floor(Math.random() * 9);
 
   if(td[randIdx].innerText === ''){
+    if(victoryMessage.innerText !== ''){
+      displayTurn.innerText = '';
+      return;
+    }
     doIfStuff(td, randIdx);
     console.log(randIdx);
     console.log(randIdx, 'inside if');
     return;
   }else if (td[randIdx].innerText !== ''){
+    if(victoryMessage.innerText !== ''){
+      displayTurn.innerText = '';
+      return;
+    }
     for(let i = 0; i <= 8; i++){
       if(td[i].innerText === ''){
         console.log(i, 'else is happening!!!');
@@ -231,6 +258,7 @@ function doIfStuff(data, idx){
   checkWin();
   togglePlayer();
   displayTurnMsg();
+  console.log('turn was displayed from doIfStuff');
 }
 
 function displayTurnMsg(){
@@ -259,6 +287,7 @@ function clearBoard() {
   gameState.currentPlayer = "";
   noTouchy = false;
   count = 0;
+  togglePlayer();
 
   console.log(count, 'after 0');
 }
@@ -336,6 +365,10 @@ function checkWin() {
   }
 
   if (victoryMessage.innerText !== "") {
+    console.log(displayTurn.innerText);
+    displayTurn.innerText = "";
+    console.log(displayTurn.innerText);
+
     noTouchy = false;
     console.log("changed the value of noTouchy");
   }
