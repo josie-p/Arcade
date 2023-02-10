@@ -6,6 +6,8 @@ let displayName2 = document.getElementsByTagName("p")[1];
 
 let displayTurn = document.getElementsByTagName("p")[2];
 
+let errorMsg = document.getElementById('errorMsg');
+
 let victoryMessage = document.getElementById("victoryMessage");
 
 let nameButton = document.getElementById("nameButton");
@@ -42,12 +44,12 @@ function displayNames() {
   let name1 = document.getElementById("playerName1").value;
   let name2 = document.getElementById("playerName2").value;
 
-  // if(name2 === 'Computer'){
-    
-  // }
-
   if(name1 === '' || name2 === ''){
-    displayName1.innerText = 'You must enter names in both of the slots';
+    errorMsg.innerText = 'You must enter names in both of the slots';
+    setTimeout(function(){
+      errorMsg.innerText = '';
+    }, 2000)
+    noTouchy = false;
     return;
   }else{
     let ind2;
@@ -285,6 +287,7 @@ function clearBoard() {
   displayTurn.innerText = "";
   victoryMessage.innerText = "";
   gameState.currentPlayer = "";
+  errorMsg.innerText = "";
   noTouchy = false;
   count = 0;
   togglePlayer();

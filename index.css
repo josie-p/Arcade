@@ -2,74 +2,184 @@
 
 @import url("https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css");
 
-/* html{
+/*
+
+slategray: #9CAFB7;
+
+*/
+
+
+html{
     /* color: #ffd046; */
     /* background-color: #4056f4; */
-/* } */
+    font-family: 'Manrope', sans-serif;
+    font-weight: 200;
+    background: linear-gradient(to top right, #f1ab86, #f7dba7, #8cc5dd);
+    color: #251605;
+}
+
+main{
+    display: flex;
+    flex-direction:row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-around;
+    /* max-height: 100vh; */
+    /* max-width: 50%; */
+    margin-bottom: 300px;
+}
 
 header{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    max-width: 300px;
     margin: auto;
+    text-align: center;
 }
+
 h1{
     font-family: 'Manrope', sans-serif;
     font-weight: 800;
 }
+/* 
+header > aside{
+    max-width: 600px;
+} */
 
 
  table, td{
     margin: auto;
     font-size: 3rem;
-    border: 2px solid #ffd046;
-
-    border-collapse: collapse;
+    border: 5px solid #136F63;
+    /* border-collapse: collapse; */
     /* border: 1px solid black; */
+    border-radius: 35px;
  }
 
 td, tr{
- border: solid 2px #ffd046;
- border-collapse: collapse;
+ border: solid 5px #136F63;
 }
-/* 
-tr:nth-of-type(3n - 2){
-    /* background-color: pink; */
-    /* border-left: 0px solid #ffd046; */
-    /* border-left: none; */
-/* }  */
 
-/* td:nth-of-type(3n + 1){
-    background-color: pink;
-} */
-
-/* tr:nth-last-child(3n - 2){
-    /* background-color: pink; */
-    /* border-bottom: none; */
-
-/* } */ 
 
 td{
   height: 100px;
   width: 150px;
   padding: 10px;
-  /* margin: auto; */
   text-align: center;
-    /* border-top: none; */
 }
 
 table{
     width: 150px;
     height: 450px;
-    border-collapse: collapse;
-}
-
-tr{
-    border-top: none;
+    border-radius: 35px;
 }
 
 #playing-board{
     width: 450px;
     height: 500px;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    /* flex-wrap: nowrap; */
+    align-content: center;
+    justify-content: center;
 
+}
+
+.holdMyForm{
+    /* margin: auto; */
+    display: flex;
+    align-content: center;
+    /* justify-content: center; */
+    /* max-width: 25%; */
+}
+
+h3{
+    text-align: center;
+    text-decoration: solid 2px underline #C57B57; 
+    margin-bottom: 0;
+    /* f1ab86 */
+}
+
+form{
+    display: flex;
+    flex: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    /* max-width: 100px; */
+}
+
+input[type='button']{
+    padding: 20px;
+    margin: 10px;
+    background-color: #f1ab86;
+    border: none;
+    border-radius: 35px;
+}
+
+input[type='button']:hover, input[type='button']:active{
+    box-shadow: 4px 4px 3px #f7dba7;
+}
+
+.myButtons{
+    display: flex;
+    flex: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-around;
+    /* max-width: 30px; */
+}
+
+.playerNames{
+    display: flex;
+    flex: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    /* max-width: 250px; */
+}
+
+.playerNames > input[type='text']{
+    /* background-color: pink; */
+    padding: 7px;
+    margin: 5px;
+}
+
+.messages{
+    text-align: center;
+}
+
+.container1{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    max-width: 100%;
+    max-height: 500px;
+    /* color: #7798AB; */
+}
+
+.container2{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    max-width: 200px;
+}
+
+.container3{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    /* max-width: 500px; */
 }
 
 

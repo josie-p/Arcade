@@ -9,22 +9,106 @@
     <title> Play Tic-Tac-Toe!</title>
 </head>
 <body>
-    <header>
+    <main>
+        <div class="container1">
+            <header>
+                <h1>Play Tic-Tac-Toe</h1>
+                <aside>
+                    <h5>To play the Tic-Tac-Toe game with a friend, enter your name and your opponent's name, then press 'Start Playing!'</h5>
+                    <h5>To play against the computer, press the 'Play the Computer button', then 'Start Playing!'</h5>
+                    <h5>Once someone has won the game, to reset the board you can either refresh this page or press the 'Clear Board' button, then 'Start Playing!'</h5>
+                </aside>
+            </header>
+        <!-- </div> -->
+       <div class="container2">
+        <h3>enter your names!</h3>
+        <div class="holdMyForm">
+            <form>
+            <div class="playerNames">
+                <input type="text" id="playerName1">
+                <input type="text" id="playerName2"><br>
+            </div>
+            <div class="myButtons">
+                <input type="button" id="playComputer" value="Play the Computer">
+                <input type="button" id="nameButton" value="Start Playing!">
+                <input type="button" id="clearButton" value="Clear Board">
+                <!-- <input type="button" id="playComputer" value="Play the Computer"> -->
+            </div>
+        </form>
+
+    </div>
+    </div>
+   <!-- <div class="container3"> -->
+
+</div>
+ <div class="container3">
+    <div class="messages">
+        <p></p>
+        <p></p>
+        <p></p>
+        <p id="errorMsg"></p>
+        <h2 id="victoryMessage"></h2>
+    </div> 
+     <table id="playing-board">
+        <caption>Playing Board</caption>
+         <tr>
+             <td></td>
+             <td></td>
+             <td></td>
+         </tr>
+         <tr>
+             <td></td>
+             <td></td>
+             <td></td>
+         </tr>
+         <tr>
+             <td></td>
+             <td></td>
+             <td></td>
+         </tr>
+     </table>
+</div>
+</main>
+</body>
+</html>
+    <!-- <header>
         <h1>Play Tic-Tac-Toe</h1>
+        <aside>
+            <h5>To play the Tic-Tac-Toe game with a friend, enter your name and your opponent's name, then press 'Start Playing!'</h5>
+            <h5>To play against the computer, press the 'Play the Computer button', then 'Start Playing!'</h5>
+            <h5>Once someone has won the game, to reset the board you can either refresh this page or press the 'Clear Board' button, then 'Start Playing!'</h5>
+        </aside>
     </header>
     <h3>enter your names!</h3>
-    <form>
-        <input type="text" id="playerName1">
-        <input type="text" id="playerName2">
-        <input type="button" id="nameButton" value="submit">
-        <input type="button" id="clearButton" value="clear board">
-        <input type="button" id="playComputer" value="Play the Computer">
+    <div class="holdMyForm">
+        <form>
+        <div class="playerNames">
+            <input type="text" id="playerName1">
+            <input type="text" id="playerName2"><br>
+        </div>
+        <div class="myButtons">
+            <input type="button" id="nameButton" value="submit">
+            <input type="button" id="clearButton" value="clear board">
+            <input type="button" id="playComputer" value="Play the Computer">
+        </div>
     </form>
+</div> -->
+    <!-- <form>
+        <div class="playerNames">
+            <input type="text" id="playerName1">
+            <input type="text" id="playerName2"><br>
+        </div>
+        <div class="myButtons">
+            <input type="button" id="nameButton" value="submit">
+            <input type="button" id="clearButton" value="clear board">
+            <input type="button" id="playComputer" value="Play the Computer">
+        </div>
+    </form> -->
+   <!-- <p></p>
    <p></p>
    <p></p>
-   <p></p>
-   <!-- <p id="victoryMessage"></p> -->
-   <h2 id="victoryMessage"></h2>
+    <p id="victoryMessage"></p> -->
+   <!-- <h2 id="victoryMessage"></h2>
     <table id="playing-board">
         <tr>
             <td></td>
@@ -41,6 +125,6 @@
             <td></td>
             <td></td>
         </tr>
-    </table>
-</body>
-</html>
+    </table> -->
+<!-- </body>
+</html> -->
