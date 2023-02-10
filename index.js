@@ -41,6 +41,9 @@ function displayNames() {
   let name1 = document.getElementById("playerName1").value;
   let name2 = document.getElementById("playerName2").value;
 
+  // if(name2 === 'Computer'){
+    
+  // }
 
   if(name1 === '' || name2 === ''){
     displayName1.innerText = 'You must enter names in both of the slots';
@@ -71,7 +74,6 @@ function autoPlay(){
   let name2 = document.getElementById("playerName2");
   // console.log(name2);
   name2.value = 'Computer';
-
 }
 
 //toggle between players
@@ -87,6 +89,36 @@ function togglePlayer() {
 //call togglePlayer to change the letter turn
 //display the player whose turn it is
 function addTick(evt) {
+
+  let name2 = document.getElementById("playerName2").value;
+
+  if(name2 === 'Computer'){
+    if (noTouchy === false) {
+      return;
+    }
+    if (gameState.currentPlayer === "X") {
+      evt.target.innerText = "X";
+      count++;
+      checkWin();
+      togglePlayer();
+      
+      // checkTie();
+    } else {
+      evt.target.innerText = "O";
+      count++;
+      checkWin();
+      togglePlayer();
+      // checkTie();
+    }
+
+    testFunc();
+    // setTimeout(playComputer, 1000);
+    // playComputer();
+    // setTimeout(testFunc, 1000);
+    displayTurn.innerText = `${gameState.currentPlayer}, it's your turn!`;
+    return;
+  }
+
   if (noTouchy === false) {
     return;
   } else if (evt.target.innerText !== "") {
@@ -108,8 +140,100 @@ function addTick(evt) {
     }
   }
 
-
   togglePlayer();
+  displayTurn.innerText = `${gameState.currentPlayer}, it's your turn!`;
+}
+
+//go to the first empty cell:
+
+// function testFunc(){
+  // let td = document.getElementsByTagName('td');
+
+//   const randIdx = Math.floor(Math.random() * 9);
+
+//   for(let i = 0; i <= 8; i++){
+//     if(td[randIdx].innerText === ''){
+//       console.log('first empty cell is ', i, gameState.currentPlayer, ' should be in ', i);
+//       td[randIdx].innerText = gameState.currentPlayer;
+//       count++;
+//       checkWin();
+//       togglePlayer();
+//       displayTurnMsg();
+//       break;
+//     }else if(td[randIdx].innerText !== ''){
+//       const newRand = Math.floor(Math.random() * 9);
+//       if(newRand === randIdx){
+//         let incOrDec = newRand;
+//         incOrDec++;
+//         td[incOrDec].innerText = gameState.currentPlayer;
+//       count++;
+//       checkWin();
+//       togglePlayer();
+//       displayTurnMsg();
+//       }else{
+//         td[newRand].innerText = gameState.currentPlayer;
+//       count++;
+//       checkWin();
+//       togglePlayer();
+//       displayTurnMsg();
+//       }
+//     }
+//   }
+// }
+
+// function incOrDecRand(num){
+//   let returnNum = num;
+//   console.log(num, 'inside incOrDec');
+//   if(num >= 8){
+//     console.log(returnNum, 'inside incOrDec if');
+//     return returnNum--;
+//   }else{
+//     console.log(returnNum, 'inside incOrDec else');
+//    return returnNum++;
+//   }
+// }
+
+function testFunc(){
+  let td = document.getElementsByTagName('td');
+
+  const randIdx = Math.floor(Math.random() * 9);
+
+  if(td[randIdx].innerText === ''){
+    doIfStuff(td, randIdx);
+    console.log(randIdx);
+    console.log(randIdx, 'inside if');
+    return;
+  }else if (td[randIdx].innerText !== ''){
+    for(let i = 0; i <= 8; i++){
+      if(td[i].innerText === ''){
+        console.log(i, 'else is happening!!!');
+        doIfStuff(td, i);
+        break;
+      }else{
+        continue;
+      }
+    }
+  }
+
+}
+
+
+// console.log(testFunc());
+// console.log(testFunc());
+// console.log(testFunc());
+
+
+
+function doIfStuff(data, idx){
+  console.log('do if stuff was executed');
+  data[idx].innerText = gameState.currentPlayer;
+  count++;
+  checkWin();
+  togglePlayer();
+  displayTurnMsg();
+}
+
+function displayTurnMsg(){
   displayTurn.innerText = `${gameState.currentPlayer}, it's your turn!`;
 }
 
@@ -124,6 +248,7 @@ function clearBoard() {
     }
   }
 
+  console.log(count, 'before 0')
   //clear all values
   displayName1.innerText = "";
   displayName2.innerText = "";
@@ -133,6 +258,9 @@ function clearBoard() {
   victoryMessage.innerText = "";
   gameState.currentPlayer = "";
   noTouchy = false;
+  count = 0;
+
+  console.log(count, 'after 0');
 }
 
 //if the clear board button is clicked, call clearBoard function

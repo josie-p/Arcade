@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200&family=Manrope:wght@200;800&display=swap');
 
-html{
-    color: #ffd046;
-    background-color: #4056f4;
-}
+/* html{
+    /* color: #ffd046; */
+    /* background-color: #4056f4; */
+/* } */
 
 header{
     margin: auto;
@@ -13,25 +13,58 @@ h1{
     font-weight: 800;
 }
 
-table, td{
+
+ table, td{
     margin: auto;
     font-size: 3rem;
     border: 2px solid #ffd046;
+    border-top: none;
+    border-right: none;
+    border-bottom: none;
+    border-left: none;
     border-collapse: collapse;
     /* border: 1px solid black; */
+ }
+
+td, tr{
+ border: solid 2px #ffd046;
+ border-collapse: collapse;
 }
+/* 
+tr:nth-of-type(3n - 2){
+    /* background-color: pink; */
+    /* border-left: 0px solid #ffd046; */
+    /* border-left: none; */
+/* }  */
+
+/* td:nth-of-type(3n + 1){
+    background-color: pink;
+} */
+
+/* tr:nth-last-child(3n - 2){
+    /* background-color: pink; */
+    /* border-bottom: none; */
+
+/* } */ 
 
 td{
     max-width: 100px;
     max-height: 100px;
     min-width: 100px;
     min-height: 100px;
+    /* border-top: none; */
 }
 
 table{
     width: 150px;
     height: 450px;
+    border-collapse: collapse;
 }
+
+tr{
+    border-top: none;
+}
+
 
 
 /* #playing-board{
