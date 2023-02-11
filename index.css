@@ -119,8 +119,10 @@ td {
 /*  title for form  */
 h3 {
   text-align: center;
-  text-decoration: solid 4px underline #f7dba7;
+  text-decoration: solid 4px underline #f1ab86;
   margin-bottom: 0;
+  animation: swing;
+  animation-duration: 2s;
 }
 
 /*  form itself  */
