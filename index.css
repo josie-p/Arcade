@@ -1,194 +1,343 @@
 /*  imported fonts and animations:  */
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200&family=Manrope:wght@200;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200&family=Manrope:wght@200;800&display=swap");
 
 @import url("https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css");
 
-
-html{
-    font-family: 'Manrope', sans-serif;
-    font-weight: 200;
-    background-color: #14213D;
-    color: white;
+/*  styling for the whole page  */
+html {
+  font-family: "Manrope", sans-serif;
+  font-weight: 200;
+  background-color: #14213d;
+  color: white;
 }
 
-main{
-    display: flex;
-    flex-direction:row;
-    flex-wrap: wrap;
-    align-content: center;
-    justify-content: space-around;
-    /* max-height: 100vh; */
-    /* max-width: 50%; */
-    margin-bottom: 300px;
+/*  styling for main  */
+main {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: space-around;
+  margin-bottom: 300px;
 }
 
-header{
-    line-height: 1.5;
-    display: flex;
-    align-content: center;
-    justify-content: center;
-    flex-direction: column;
-    flex-wrap: wrap;
-    max-width: 300px;
-    margin-right: 100px;
-    margin-left: 100px;
-    text-align: center;
+/*  styling for header  */
+header {
+  line-height: 1.5;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  max-width: 300px;
+  margin-right: 100px;
+  margin-left: 100px;
+  text-align: center;
 }
 
-h1{
-    font-family: 'Manrope', sans-serif;
+h1 {
+  font-family: "Manrope", sans-serif;
+  font-weight: 800;
+  text-decoration: underline dashed 3px #f1ab86;
+  animation: bounceInUp;
+  animation-duration: 2s;
+}
+
+span{
+    font-family: "Manrope", sans-serif;
     font-weight: 800;
-    text-decoration: underline dashed 3px #f1ab86;
+    color: #f1ab86;
+    animation: wobble;
+    animation-duration: 3s;
 }
 
-h5{
-    font-size: 15px;
+h5 {
+  font-size: 15px;
 }
 
-
- table, td{
-    margin: auto;
-    font-size: 3rem;
-    border: 5px dashed #F7DBA7;
-    border-radius: 35px;
- }
-
-td, tr{
- border: solid 5px #F7DBA7;
+/*  styling for messages div  */
+.messages {
+  text-align: center;
+  color: #f1ab86;
+  font-size: 15pt;
+  font-weight: 800;
 }
 
+/*  player turn styling  */
+p:nth-of-type(3) {
+  text-decoration: underline solid 3px #f7dba7;
+}
 
-td{
+/* styling for table portion*/
+table,
+td {
+  margin: auto;
+  font-size: 3rem;
+  border: 5px dashed #f7dba7;
+  border-radius: 35px;
+}
+
+td,
+tr {
+  border: solid 5px #f7dba7;
+}
+
+table {
+  border-radius: 35px;
+}
+
+td {
   height: 100px;
   width: 150px;
   padding: 10px;
   text-align: center;
-  /* margin: 10px; */
 }
 
-table{
-    /* width: 150px; */
-    /* height: 450px; */
-    border-radius: 35px;
+/*  colors for 'x's or 'o's  */
+.classX {
+  color: hotpink;
+  font-weight: 800;
 }
 
-#playing-board{
-    width: 450px;
-    height: 500px;
+.classO {
+  color: white;
+  font-weight: 800;
+}
+
+/*  playing board is the id on the table element  */
+#playing-board {
+  width: 450px;
+  height: 500px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+}
+
+/*  styling for form  */
+/*  title for form  */
+h3 {
+  text-align: center;
+  text-decoration: solid 4px underline #f7dba7;
+  margin-bottom: 0;
+}
+
+/*  form itself  */
+form {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+}
+
+/*  styling for div holding buttons  */
+.myButtons {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: space-around;
+}
+
+/*  styling for buttons  */
+input[type="button"] {
+  padding: 20px;
+  margin: 10px;
+  background-color: #f1ab86;
+  color: #14213d;
+  font-weight: 800;
+  border: none;
+  border-radius: 35px;
+  box-shadow: 2px 2px 1px #f7dba7;
+}
+
+/*  styling for when buttons are hovered over or active  */
+input[type="button"]:hover,
+input[type="button"]:active {
+  box-shadow: 4px 4px 3px #f7dba7;
+}
+
+/*  styling for div holding player names  */
+.playerNames {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+}
+
+/*  styling for 'text' input  */
+.playerNames > input[type="text"] {
+  padding: 7px;
+  margin: 5px;
+  font-family: "Manrope", sans-serif;
+  font-weight: 800;
+  background-color: #f7dba7;
+  color: #14213d;
+  border: none;
+}
+
+/*  styling for container divs on page  */
+.container1 {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  max-height: 600px;
+}
+
+.container2 {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  max-width: 200px;
+}
+
+.container3 {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+}
+
+/*  MEDIA QUERIES:  */
+/*-----------------------------------*/
+@media screen and (max-width: 480px) {
+  /*  styling for main  */
+  main {
+    flex-direction: column;
+  }
+
+  /* styling for header */
+  header {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    max-width: 100%;
+    margin: auto;
+    text-align: center;
+  }
+
+  /*  styling for table  */
+  table {
+    margin-top: 10px;
+  }
+
+  td {
+    height: 75px;
+    width: 115px;
+    padding: 10px;
+    text-align: center;
+  }
+
+  #playing-board {
+    width: 350px;
+    height: 400px;
     padding: 20px;
     display: flex;
     flex-direction: column;
-    /* flex-wrap: nowrap; */
     align-content: center;
     justify-content: center;
-    margin-right: none;
-
+  }
 }
 
-/* .holdMyForm{ */
-    /* margin: auto; */
-    /* display: flex; 
-    align-content: center;
-    justify-content: center; */
-    /* max-width: 25%; */
-/* } */
-
-h3{
-    text-align: center;
-    text-decoration: solid 4px underline #F7DBA7; 
-    margin-bottom: 0;
-}
-
-form{
+@media screen and (max-width: 393px) {
+  /*  styling for header  */
+  header {
     display: flex;
-    flex: column;
+    flex-direction: column;
     flex-wrap: wrap;
     align-content: center;
     justify-content: center;
-    /* max-width: 100px; */
-}
+    max-width: 100%;
+    margin: auto;
+    text-align: center;
+  }
 
-input[type='button']{
+  /*  styling for table  */
+  table {
+    margin-top: 10px;
+  }
+
+  td {
+    height: 75px;
+    width: 115px;
+    padding: 10px;
+    text-align: center;
+  }
+
+  #playing-board {
+    width: 350px;
+    height: 400px;
     padding: 20px;
-    margin: 10px;
-    background-color: #f1ab86;
-    color: #14213D;
-    font-weight: 800;
-    border: none;
-    border-radius: 35px;
-    box-shadow: 2px 2px 1px #F7DBA7;
-}
-
-input[type='button']:hover, input[type='button']:active{
-    box-shadow: 4px 4px 3px #F7DBA7;
-}
-
-.myButtons{
     display: flex;
-    /* flex: row; */
-    flex-wrap: wrap;
+    flex-direction: column;
     align-content: center;
-    justify-content: space-around;
+    justify-content: center;
+  }
+
+  /*  styling for container div  */
+  .container1 {
+    max-height: none;
+  }
 }
 
-.playerNames{
+@media screen and (max-width: 280px) {
+  /*  styling for header  */
+  header {
     display: flex;
-    flex: row;
+    flex-direction: column;
     flex-wrap: wrap;
     align-content: center;
     justify-content: center;
-}
-
-.playerNames > input[type='text']{
-    padding: 7px;
-    margin: 5px;
-    background-color: #F7DBA7;
-    border: none;
-}
-
-.messages{
+    max-width: 100%;
+    margin: auto;
     text-align: center;
-    color: #f1ab86;
-    font-size: 15pt;
-    font-weight: 800;
-}
+  }
 
-.container1{
+  /*  styling for table  */
+  table {
+    margin-top: 30px;
+    border: none;
+  }
+
+  td {
+    height: 65px;
+    width: 100px;
+    padding: 10px;
+    text-align: center;
+  }
+
+  #playing-board {
+    width: 270px;
+    height: 300px;
+    padding: 20px;
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
     align-content: center;
     justify-content: center;
-    max-height: 600px;
-}
+  }
 
-.container2{
-    display: flex;
-    flex-direction: column;
+  /*  styling for containers  */
+  .container1 {
+    max-height: none;
+  }
+
+  .container2 {
     flex-wrap: wrap;
-    align-content: center;
-    justify-content: center;
-    max-width: 200px;
+    max-width: 100%;
+  }
 }
 
-.container3{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-content: center;
-    justify-content: center;
-}
-
-.classX{
-    color: hotpink;
-    font-weight: 800;
-}
-
-.classO{
-    color: white;
-    font-weight: 800;
-}
-
-p:nth-of-type(3){
-    text-decoration: underline solid 3px #F7DBA7 ;
+@media screen and (max-width: 1114px) {
+  /*  styling for container div  */
+  .container2 {
+    max-width: none;
+  }
 }

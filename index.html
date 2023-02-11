@@ -1,73 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="index.css">
-    <!-- <script src="index.js" defer></script> -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
     <script src="index.js" defer></script>
-    <title> Play Tic-Tac-Toe!</title>
-</head>
-<body>
+    <title>Play Tic-Tac-Toe!</title>
+  </head>
+  <body>
     <main>
-        <div class="container1">
-            <header>
-                <h1>Play Tic-Tac-Toe</h1>
-                <aside>
-                    <h5>To play Tic-Tac-Toe with a friend, enter your name and your opponent's name, then press 'Start Playing!'</h5>
-                    <h5>To play against the computer, press the 'Play the Computer' button, then 'Start Playing!'</h5>
-                    <h5>Once someone has won the game, to reset the board you can either refresh this page or press the 'Clear Board' button, then 'Start Playing!'</h5>
-                </aside>
-            </header>
-        <!-- </div> -->
-       <div class="container2">
-        <h3>enter your names!</h3>
-        <div class="holdMyForm">
+      <div class="container1">
+        <header>
+          <h1>Play Tic-Tac-Toe!</h1><span>!!!</span>
+          <aside>
+            <h5>
+              To play Tic-Tac-Toe with a friend, enter your name and your
+              opponent's name, then press 'Start Playing!'
+            </h5>
+            <h5>
+              To play against the computer, press the 'Play the Computer'
+              button, then 'Start Playing!'
+            </h5>
+            <h5>
+              Once someone has won the game, to reset the board you can either
+              refresh this page or press the 'Clear Board' button, then 'Start
+              Playing!'
+            </h5>
+          </aside>
+        </header>
+        <div class="container2">
+          <h3>enter your names!</h3>
+          <div class="holdMyForm">
             <form>
-            <div class="playerNames">
-                <input type="text" id="playerName1">
-                <input type="text" id="playerName2"><br>
-            </div>
-            <div class="myButtons">
-                <!-- <input type="button" id="nameButton" value="Start Playing!"> -->
-                <input type="button" id="playComputer" value="Play the Computer">
-                <input type="button" id="startGame" value="Start Playing!">
-                <input type="button" id="clearButton" value="Clear Board">
-                <!-- <input type="button" id="playComputer" value="Play the Computer"> -->
-            </div>
-        </form>
-    </div>
-    </div>
-</div>
- <div class="container3">
-    <div class="messages">
-        <p></p>
-        <p></p>
-        <p></p>
-        <p id="errorMsg"></p>
-        <h2 id="victoryMessage"></h2>
-    </div> 
-     <table id="playing-board">
-        <caption>Playing Board</caption>
-         <tr>
-             <td></td>
-             <td></td>
-             <td></td>
-         </tr>
-         <tr>
-             <td></td>
-             <td></td>
-             <td></td>
-         </tr>
-         <tr>
-             <td></td>
-             <td></td>
-             <td></td>
-         </tr>
-     </table>
-</div>
-</main>
-</body>
+              <div class="playerNames">
+                <input type="text" id="playerName1" />
+                <input type="text" id="playerName2" /><br />
+              </div>
+              <div class="myButtons">
+                <input
+                  type="button"
+                  id="playComputer"
+                  value="Play the Computer"
+                />
+                <input type="button" id="startGame" value="Start Playing!" />
+                <input type="button" id="clearButton" value="Clear Board" />
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="container3">
+        <div class="messages">
+          <p></p>
+          <p></p>
+          <p></p>
+          <p id="errorMsg"></p>
+          <h2 id="victoryMessage"></h2>
+        </div>
+        <table id="playing-board">
+          <caption>
+            Playing Board
+          </caption>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </table>
+      </div>
+    </main>
+  </body>
 </html>
-    
