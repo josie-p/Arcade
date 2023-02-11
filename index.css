@@ -1,21 +1,14 @@
+/*  imported fonts and animations:  */
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200&family=Manrope:wght@200;800&display=swap');
 
 @import url("https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css");
 
-/*
-
-slategray: #9CAFB7;
-
-*/
-
 
 html{
-    /* color: #ffd046; */
-    /* background-color: #4056f4; */
     font-family: 'Manrope', sans-serif;
     font-weight: 200;
-    background: linear-gradient(to top right, #f1ab86, #f7dba7, #8cc5dd);
-    color: #251605;
+    background-color: #14213D;
+    color: white;
 }
 
 main{
@@ -30,38 +23,38 @@ main{
 }
 
 header{
-    line-height: 2.0;
+    line-height: 1.5;
     display: flex;
     align-content: center;
     justify-content: center;
     flex-direction: column;
     flex-wrap: wrap;
     max-width: 300px;
-    margin: auto;
+    margin-right: 100px;
+    margin-left: 100px;
     text-align: center;
 }
 
 h1{
     font-family: 'Manrope', sans-serif;
     font-weight: 800;
+    text-decoration: underline dashed 3px #f1ab86;
 }
-/* 
-header > aside{
-    max-width: 600px;
-} */
+
+h5{
+    font-size: 15px;
+}
 
 
  table, td{
     margin: auto;
     font-size: 3rem;
-    border: 5px solid #136F63;
-    /* border-collapse: collapse; */
-    /* border: 1px solid black; */
+    border: 5px dashed #F7DBA7;
     border-radius: 35px;
  }
 
 td, tr{
- border: solid 5px #136F63;
+ border: solid 5px #F7DBA7;
 }
 
 
@@ -70,6 +63,7 @@ td{
   width: 150px;
   padding: 10px;
   text-align: center;
+  /* margin: 10px; */
 }
 
 table{
@@ -87,22 +81,22 @@ table{
     /* flex-wrap: nowrap; */
     align-content: center;
     justify-content: center;
+    margin-right: none;
 
 }
 
-.holdMyForm{
+/* .holdMyForm{ */
     /* margin: auto; */
-    display: flex;
+    /* display: flex; 
     align-content: center;
-    /* justify-content: center; */
+    justify-content: center; */
     /* max-width: 25%; */
-}
+/* } */
 
 h3{
     text-align: center;
-    text-decoration: solid 4px underline #136F63; 
+    text-decoration: solid 4px underline #F7DBA7; 
     margin-bottom: 0;
-    /* f1ab86 */
 }
 
 form{
@@ -118,22 +112,23 @@ input[type='button']{
     padding: 20px;
     margin: 10px;
     background-color: #f1ab86;
+    color: #14213D;
+    font-weight: 800;
     border: none;
     border-radius: 35px;
-    box-shadow: 2px 2px 1px #136F63;
+    box-shadow: 2px 2px 1px #F7DBA7;
 }
 
 input[type='button']:hover, input[type='button']:active{
-    box-shadow: 4px 4px 3px #136F63;
+    box-shadow: 4px 4px 3px #F7DBA7;
 }
 
 .myButtons{
     display: flex;
-    flex: row;
+    /* flex: row; */
     flex-wrap: wrap;
     align-content: center;
     justify-content: space-around;
-    /* max-width: 30px; */
 }
 
 .playerNames{
@@ -142,17 +137,20 @@ input[type='button']:hover, input[type='button']:active{
     flex-wrap: wrap;
     align-content: center;
     justify-content: center;
-    /* max-width: 250px; */
 }
 
 .playerNames > input[type='text']{
-    /* background-color: pink; */
     padding: 7px;
     margin: 5px;
+    background-color: #F7DBA7;
+    border: none;
 }
 
 .messages{
     text-align: center;
+    color: #f1ab86;
+    font-size: 15pt;
+    font-weight: 800;
 }
 
 .container1{
@@ -161,8 +159,7 @@ input[type='button']:hover, input[type='button']:active{
     flex-wrap: wrap;
     align-content: center;
     justify-content: center;
-    max-width: 100%;
-    max-height: 500px;
+    max-height: 600px;
 }
 
 .container2{
@@ -180,7 +177,6 @@ input[type='button']:hover, input[type='button']:active{
     flex-wrap: wrap;
     align-content: center;
     justify-content: center;
-    /* max-width: 500px; */
 }
 
 .classX{
@@ -189,14 +185,10 @@ input[type='button']:hover, input[type='button']:active{
 }
 
 .classO{
-    color: #136F63;
+    color: white;
     font-weight: 800;
 }
 
-/* #playing-board{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: center;  */
-    /* /* max-width: 500px; */
-/* } */
+p:nth-of-type(3){
+    text-decoration: underline solid 3px #F7DBA7 ;
+}
