@@ -39,16 +39,8 @@ h1 {
   font-family: "Manrope", sans-serif;
   font-weight: 800;
   text-decoration: underline dashed 3px #f1ab86;
-  animation: bounceInUp;
+  animation: tada;
   animation-duration: 2s;
-}
-
-span{
-    font-family: "Manrope", sans-serif;
-    font-weight: 800;
-    color: #f1ab86;
-    animation: wobble;
-    animation-duration: 3s;
 }
 
 h5 {
@@ -121,8 +113,9 @@ h3 {
   text-align: center;
   text-decoration: solid 4px underline #f1ab86;
   margin-bottom: 0;
-  animation: swing;
-  animation-duration: 2s;
+  animation: shakeX;
+  animation-delay: 4s;
+  animation-duration: 1.5s;
 }
 
 /*  form itself  */
